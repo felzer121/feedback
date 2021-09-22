@@ -7,6 +7,7 @@ function App() {
     (function(){
         emailJs.init("user_YWFJ05qbxsCx6oYYopJWA");
     })();
+    const [isButton, setButton] = useState(true)
     const [smile, setSmile] = useState({
         poop: 0,
         work: 0,
@@ -20,7 +21,7 @@ function App() {
     }
 
     const send = () => {
-        console.log(smile)
+        setButton(false)
         emailJs.send('service_ny8ng2v','template_0c3aueu', templateParams, )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
@@ -52,7 +53,7 @@ function App() {
                             }}
                             onClick={()=>setSmile({...smile, good: smile.good + 1})} alt=""/>
             </div>
-            <button onClick={send} className='button'>Отправить</button>
+            {isButton && <motion.button onClick={send} className='button'>Отправить</motion.button> }
         </div>
     </div>
   );
