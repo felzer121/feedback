@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import emailjs from 'emailjs-com';
+import emailJs from 'emailjs-com';
 import {motion} from 'framer-motion'
 
 function App() {
     (function(){
-        emailjs.init("user_YWFJ05qbxsCx6oYYopJWA");
+        emailJs.init("user_YWFJ05qbxsCx6oYYopJWA");
     })();
     const [smile, setSmile] = useState({
         poop: 0,
@@ -21,7 +21,7 @@ function App() {
 
     const send = () => {
         console.log(smile)
-        emailjs.send('service_ny8ng2v','template_0c3aueu', templateParams, )
+        emailJs.send('service_ny8ng2v','template_0c3aueu', templateParams, )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
             }, (err) => {
