@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
         <div className="lesson">
-            <h2>Как прошел урок?</h2>
+            <h2>Как прошла тренировка?</h2>
             <div className="smile">
                 <motion.img src="https://static.tildacdn.com/tild6562-6633-4339-b761-633339643033/image.png"
                             whileTap={{
